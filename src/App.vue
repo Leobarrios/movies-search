@@ -1,18 +1,34 @@
 <template>
   <div id="app">
+    <Navbar/>
+    <Content/>
+    <h1>{{titulo}}</h1>
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld v-bind:msg="titulo" />
+    
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Navbar from "./components/Navbar.vue"
+import Content from "./components/Content.vue"
+import List from "./components/List.vue"
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HelloWorld,
+    Navbar,
+    Content,
+    List,
+  },
+  data() {
+    return {
+      titulo: 'proyecto vue cli'
+    }
   }
+
 };
 </script>
 
