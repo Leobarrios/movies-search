@@ -5,15 +5,21 @@
     <h1>{{titulo}}</h1>
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld v-bind:msg="titulo" />
+    <Navbar tittle="Movies" > 
+      
+    </Navbar>
     
   </div>
 </template>
+
+
+
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/Navbar.vue"
 import Content from "./components/Content.vue"
-import List from "./components/List.vue"
+// import List from "./components/List.vue"
 
 export default {
   name: "app",
@@ -21,7 +27,7 @@ export default {
     HelloWorld,
     Navbar,
     Content,
-    List,
+    // List,
   },
   data() {
     return {
