@@ -1,14 +1,7 @@
 <template>
-  <div id="app">
-    <Navbar/>
-    <Content/>
-    <h1>{{titulo}}</h1>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld v-bind:msg="titulo" />
-    <Navbar tittle="Movies" > 
-      
-    </Navbar>
-    
+  <div>
+    <Navbar v-on:search-movie-title="searchMovie"></navbar>
+    <Content v-bind:movie-title="movieTitleToSearch"></Content>
   </div>
 </template>
 
@@ -16,7 +9,6 @@
 
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/Navbar.vue"
 import Content from "./components/Content.vue"
 // import List from "./components/List.vue"
@@ -24,27 +16,21 @@ import Content from "./components/Content.vue"
 export default {
   name: "app",
   components: {
-    HelloWorld,
     Navbar,
-    Content,
+    Content
     // List,
   },
   data() {
     return {
-      titulo: 'proyecto vue cli'
+      titulo: 'my movies app',
+      movieTitleToSearch: ''
+    }
+  },
+  methods : {
+    searchMovie: function (title) {
+      this.movieTitleToSearch = title
     }
   }
 
 };
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
